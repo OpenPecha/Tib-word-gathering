@@ -10,7 +10,7 @@ def test_evaluate_tib_word():
     It checks if the source text from the input file matches the source in the JSON files.
     It also saves the valid data to a JSON file for further inspection.
     """
-    input_file_path = "tests/data/evaluate_tibetan_sample/evaluate.txt"
+    input_file_path = "tests/data/evaluate_tibetan_sample/Tibetan_labeled_2.5w.txt"
     output_file_path = "tests/data/expected/evaluate.json"
     valid_output_path = (
         "tests/data/output/evaluate_data.json"  # Path to save valid data
