@@ -108,6 +108,6 @@ def process_folder(folder_path: str):
                         save_json(invalid_data, invalid_data_file)
 
 
-# Example usage:
-folder_path = "data/input/SegPos-eKangyur-eTengyur"
-process_folder(folder_path)
+if __name__ == "__main__":
+    folder_path = "data/input/SegPos-eKangyur-eTengyur"
+    process_folder(folder_path)
