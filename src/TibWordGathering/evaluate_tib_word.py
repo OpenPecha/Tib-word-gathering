@@ -8,7 +8,7 @@ def read_and_process_tibetan_data(file_path, encoding="utf-16"):
     """
     Reads the Tibetan labeled data file, processes each line, and returns a list of dictionaries.
     Each dictionary contains 'source' and 'target' keys, where 'source' is the original sentence text
-    and 'target' is the tokenized words separated by spaces.
+    and 'target' is the tokenized words separated by spaces. Ensures no extra space after the last word.
     """
     with open(file_path, encoding=encoding) as file:
         lines = file.readlines()
@@ -23,7 +23,12 @@ def read_and_process_tibetan_data(file_path, encoding="utf-16"):
         if line:  # Check if the line is not empty
             words = line.split("/")
             source = "".join(words)  # Join words to form the source sentence
-            target = " ".join(words)  # Join words with space for the target
+
+            # Ensure no extra space at the end of the line
+            target = " ".join(
+                [word for word in words if word]
+            )  # Join words with space but skip empty strings
+
             data_point = {"source": source, "target": target}
             if is_valid_data_point(data_point):
                 valid_data.append(data_point)

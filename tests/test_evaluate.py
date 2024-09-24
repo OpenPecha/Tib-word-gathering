@@ -17,9 +17,7 @@ def test_evaluate_tib_word():
     )
 
     # Load the valid source texts from the Tibetan labeled data file
-    valid_data, invalid_data = read_and_process_tibetan_data(
-        input_file_path, encoding="utf-16"
-    )
+    valid_data, invalid_data = read_and_process_tibetan_data(input_file_path)
 
     # Convert valid_data into a format similar to JSON for comparison
     valid_data_json_format = [
@@ -33,6 +31,7 @@ def test_evaluate_tib_word():
     assert (
         valid_data_json_format == expected_data
     ), f"Mismatch between processed data and expected data.\nProcessed: {valid_data_json_format}\nExpected: {expected_data}"  # noqa
+
     print("Test passed: The source and target fields match the expected output.")
 
 

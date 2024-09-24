@@ -129,7 +129,6 @@ dmypy.json
 .pyre/
 
 # Input folder
-data/input
-data/output
+data
 # Ds Store
 .DS_Store
