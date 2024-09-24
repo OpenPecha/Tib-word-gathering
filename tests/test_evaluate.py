@@ -33,3 +33,8 @@ def test_evaluate_tib_word():
     assert (
         valid_data_json_format == expected_data
     ), f"Mismatch between processed data and expected data.\nProcessed: {valid_data_json_format}\nExpected: {expected_data}"  # noqa
+    print("Test passed: The source and target fields match the expected output.")
+
+
+if __name__ == "__main__":
+    test_evaluate_tib_word()
