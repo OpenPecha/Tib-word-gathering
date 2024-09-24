@@ -11,7 +11,7 @@ def test_conllu_parser():
     It also saves the valid data to a JSON file for further inspection.
     """
     input_file_path = "tests/data/conllu_sample/conllu.conllu"
-    output_file_path = "tests/expected/conllu.json"
+    output_file_path = "tests/data/expected/conllu.json"
     valid_output_path = Path("tests/data/output")  # Path to save valid data
     valid_output_path.mkdir(parents=True, exist_ok=True)
     valid_output_data = valid_output_path / "conllu_data.json"

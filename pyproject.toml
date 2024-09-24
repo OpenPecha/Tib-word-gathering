@@ -17,6 +17,10 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+dependencies = [
+    "conllu>=5.0.2",
+]
+
 [project.optional-dependencies]
 dev = [
     "pytest",

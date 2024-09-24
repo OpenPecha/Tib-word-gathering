@@ -12,7 +12,7 @@ def test_segpos_kang_teng():
     input_file_path = (
         "tests/data/segpos_kangyur_and_eTengyur_sample/segpos_kangyur_and_eTengyur.txt"
     )
-    output_file_path = "tests/expected/segpos_kangyur_and_eTengyur.json"
+    output_file_path = "tests/data/expected/segpos_kangyur_and_eTengyur.json"
     valid_output_path = (
         "tests/data/output/segpos_kang_and_eteng_data.json"  # Path to save valid data
     )
