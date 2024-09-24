@@ -10,7 +10,7 @@ def test_segpos():
     It also saves the valid data to a JSON file for further inspection.
     """
     input_file_path = "tests/data/segpos_sample/segpos.txt"
-    output_file_path = "tests/data/expected/segpos.json"
+    output_file_path = "tests/expected/segpos.json"
     valid_output_path = "tests/data/output/valid_data.json"  # Path to save valid data
 
     # Load the valid source texts from the .txt file using the segpos parser

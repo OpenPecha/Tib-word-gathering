@@ -11,7 +11,7 @@ def test_evaluate_tib_word():
     It also saves the valid data to a JSON file for further inspection.
     """
     input_file_path = "tests/data/evaluate_tibetan_sample/evaluate.txt"
-    output_file_path = "tests/data/expected/evaluate.json"
+    output_file_path = "tests/expected/evaluate.json"
     valid_output_path = (
         "tests/data/output/evaluate_data.json"  # Path to save valid data
     )
