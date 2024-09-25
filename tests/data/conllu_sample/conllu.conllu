@@ -1,0 +1,61 @@
+# sent_id = bu_ston:001a:T1
+# text = བདེ་བར་གཤེགས་པའི་བསྟན་བའི་གསལ་བྱེད་ཆོས་ཀྱི་འབྱུང་གནས་གསུང་རབ་རིན་པོ་ཆེའི་མཛོད་ཅེས་བྱ་བ།
+1	བདེ་བ	བདེ་བ་	VERB	_	VerbForm=Vnoun	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T1
+2	ར་	དུ་√case	ADP	_	Case=Ter	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T2
+3	གཤེགས་པ	གཤེགས་	VERB	_	VerbForm=Vnoun	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T3
+4	འི་	གྱི་√case	ADP	_	Case=Gen	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T4
+5	བསྟན་བ	སྟོན་	VERB	_	Tense=Fut|VerbForm=Vnoun	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T5
+6	འི་	གྱི་√case	ADP	_	Case=Gen	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T6
+7	གསལ་བྱེད་ཆོས་	གསལ་བྱེད་ཆོས་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T7
+8	ཀྱི་	གྱི་√case	ADP	_	Case=Gen	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T8
+9	འབྱུང་གནས་གསུང་རབ་	འབྱུང་གནས་གསུང་རབ་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T9
+10	རིན་པོ་ཆེ	རིན་པོ་ཆེ་	ADJ	_	_	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T10
+11	འི་	གྱི་√case	ADP	_	Case=Gen	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T11
+12	མཛོད་	མཛོད་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T12
+13	ཅེས་	ཅེས་	VERB	_	Mood=Qot	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T13
+14	བྱ་བ	བྱེད་	VERB	_	Tense=Fut|VerbForm=Vnoun	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T14
+15	།	།	PUNCT	_	_	0	root	_	SpaceAfter=Yes|Tokenid=bu_ston:001a:T15
+
+# sent_id = bu_ston:001a:T17
+# text = བཅོམ་ལྡན་འདས་ཤཱཀྱ་སེང་གེ་ལ་ཕྱག་འཚལ་ལོ།།
+1	བཅོམ་ལྡན་འདས་	བཅོམ་ལྡན་འདས་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T17
+2	ཤཱཀྱ་སེང་གེ་	ཤཱཀྱ་སེང་གེ་	PROPN	_	_	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T18
+3	ལ་	ལ་√case	ADP	_	Case=All	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T19
+4	ཕྱག་	ཕྱག་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T20
+5	འཚལ་	འཚལ་	VERB	_	Tense=Fut/Pres	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T21
+6	ལོ	འོ་√cv	PART	_	Mood=Ind	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T22
+7	།	།	PUNCT	_	_	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001a:T23
+8	།	།	PUNCT	_	_	0	root	_	SpaceAfter=Yes|Tokenid=bu_ston:001a:T25
+
+# sent_id = bu_ston:001b:T28
+# text = གང་ཞིག་ཐུགས་བསྐྱེད་དགེ་ཚོགས་བདུད་རྩིའི་ཟས་ཅན་ལས་བྱུང་བརྣག་དཀའི་བཟོད་པས་གཟི་དཔལ་འབར་བ།།
+1	གང་	གང་√p	PRON	_	PronType=Int	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T28
+2	ཞིག་	ཅིག་√d	DET	_	PronType=Ind	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T29
+3	ཐུགས་བསྐྱེད་དགེ་ཚོགས་བདུད་རྩི	ཐུགས་བསྐྱེད་དགེ་ཚོགས་བདུད་རྩི་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T30
+4	འི་	གྱི་√case	ADP	_	Case=Gen	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T31
+5	ཟས་ཅན་	ཟས་ཅན་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T32
+6	ལས་	ལས་√case	ADP	_	Case=Abl	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T33
+7	བྱུང་	འབྱུང་	VERB	_	Tense=Past	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T34
+8	བརྣག་དཀ	བརྣག་དཀ་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T35
+9	འི་	གྱི་√case	ADP	_	Case=Gen	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T36
+10	བཟོད་པ	བཟོད་	VERB	_	VerbForm=Vnoun	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T37
+11	ས་	གྱིས་√case	ADP	_	Case=Agn	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T38
+12	གཟི་དཔལ་	གཟི་དཔལ་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T39
+13	འབར་བ	འབར་	VERB	_	Tense=Fut/Pres|VerbForm=Vnoun	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T40
+14	།	།	PUNCT	_	_	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T41
+15	།	།	PUNCT	_	_	0	root	_	SpaceAfter=Yes|Tokenid=bu_ston:001b:T43
+
+# sent_id = bu_ston:001b:T45
+# text = སྐུ་གསུམ་མཐར་ཕྱིན་རིན་ཆེན་རང་བཞིན་དཔག་ཡས་སྨོན་ལམ་མྱུར་འགྲོ་བདུན་ལྡན་གཟུང་འཛིན་གོས་བྲལ་བས།།
+1	སྐུ་	སྐུ་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T45
+2	གསུམ་	གསུམ་	NUM	_	NumType=Card|NumForm=Word	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T46
+3	མཐ	མཐའ་	NOUN	_	NounType=Rel	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T47
+4	ར་	དུ་√case	ADP	_	Case=Ter	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T48
+5	ཕྱིན་རིན་ཆེན་རང་བཞིན་དཔག་ཡས་སྨོན་ལམ་	ཕྱིན་རིན་ཆེན་རང་བཞིན་དཔག་ཡས་སྨོན་ལམ་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T49
+6	མྱུར་	མྱུར་	VERB	_	Tense=Pres	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T50
+7	འགྲོ་	འགྲོ་	VERB	_	Tense=Fut/Pres	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T51
+8	བདུན་ལྡན་གཟུང་འཛིན་གོས་	བདུན་ལྡན་གཟུང་འཛིན་གོས་	NOUN	_	Number=Sing	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T52
+9	བྲལ་བ	བྲལ་བ་	VERB	_	Tense=Fut/Pres|VerbForm=Vnoun	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T53
+10	ས	གྱིས་√case	ADP	_	Case=Agn	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T54
+11	།	།	PUNCT	_	_	0	root	_	SpaceAfter=No|Tokenid=bu_ston:001b:T55
+12	།	།	PUNCT	_	_	0	root	_	SpaceAfter=Yes|Tokenid=bu_ston:001b:T57
