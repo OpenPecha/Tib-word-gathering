@@ -7,29 +7,33 @@ from TibWordGathering.utils import is_valid_data_point, save_json
 def read_and_process_tibetan_data(file_path, encoding="utf-16"):
     """
     Reads the Tibetan labeled data file, processes each line, and returns a list of dictionaries.
-    Each dictionary contains 'source' and 'target' keys, where 'source' is the original sentence text
-    and 'target' is the tokenized words separated by spaces. Ensures no extra space after the last word.
+    Each dictionary contains 'source', 'target', and 'filename' keys, where 'source' is the original sentence text,
+    'target' is the tokenized words separated by spaces, and 'filename' is the name of the processed file.
     """
     with open(file_path, encoding=encoding) as file:
         lines = file.readlines()
 
-    # Prepare the JSON structure
+    # Prepare the lists for valid and invalid data
     valid_data = []
     invalid_data = []
 
+    # Extract filename
+    filename = os.path.basename(file_path)
+
     for line in lines:
-        # Strip whitespace and split by newline
+        # Strip whitespace and split by slash
         line = line.strip()
         if line:  # Check if the line is not empty
             words = line.split("/")
             source = "".join(words)  # Join words to form the source sentence
-
-            # Ensure no extra space at the end of the line
             target = " ".join(
                 [word for word in words if word]
             )  # Join words with space but skip empty strings
 
-            data_point = {"source": source, "target": target}
+            # Create a dictionary with source, target, and filename
+            data_point = {"source": source, "target": target, "filename": filename}
+
+            # Classify data as valid or invalid based on criteria
             if is_valid_data_point(data_point):
                 valid_data.append(data_point)
             else:
@@ -39,16 +43,34 @@ def read_and_process_tibetan_data(file_path, encoding="utf-16"):
 
 
 if __name__ == "__main__":
-    # Example usage
-    file_path = "data/input/Tibetan/Tibetan_labeled_2.5w.txt"
+    # Define paths
+    folder_path = "data/input/Tibetan"
     output_folder = Path("data/output/evaluate_tib_word")
     os.makedirs(output_folder, exist_ok=True)
-    valid_output_data_folder = output_folder / "valid_data_json"
-    os.makedirs(valid_output_data_folder, exist_ok=True)
-    invalid_output_data_folder = output_folder / "invalid_data_json"
-    os.makedirs(invalid_output_data_folder, exist_ok=True)
-    valid_data, invalid_data = read_and_process_tibetan_data(file_path)
-    filename = os.path.basename(file_path).replace(".txt", ".json")
-    save_json(valid_data, valid_output_data_folder / filename)
-    if invalid_data:
-        save_json(invalid_data, invalid_output_data_folder / filename)
+
+    # Output JSON files for valid and invalid data
+    valid_output_data_file = output_folder / "evaluate_valid_data.json"
+    invalid_output_data_file = output_folder / "evaluate_invalid_data.json"
+
+    # Initialize lists to store all valid and invalid data
+    all_valid_data = []
+    all_invalid_data = []
+
+    # Process each file in the folder
+    for file_name in os.listdir(folder_path):
+        if file_name.endswith(".txt"):
+            file_path = os.path.join(folder_path, file_name)
+
+            # Read and process the file
+            valid_data, invalid_data = read_and_process_tibetan_data(file_path)
+
+            # Append to the final list of valid and invalid data
+            all_valid_data.extend(valid_data)
+            all_invalid_data.extend(invalid_data)
+
+    # Save all valid data into a single JSON file
+    save_json(all_valid_data, valid_output_data_file)
+
+    # Save all invalid data into a separate JSON file
+    if all_invalid_data:
+        save_json(all_invalid_data, invalid_output_data_file)

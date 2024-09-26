@@ -7,18 +7,18 @@ from TibWordGathering.utils import is_valid_data_point, save_json
 def process_file(file_path: str):
     """
     Processes a single text file and returns a list of valid data points.
-    Each data point is a dictionary with 'source' and 'target' as keys.
-    The 'source' key contains the original sentence text, and the 'target' key contains the tokenized words.
+    Each data point is a dictionary with 'source', 'target', and 'filename' keys.
 
     Parameters:
     file_path (str): The path to the text file.
 
     Returns:
-    list: A list of valid data points, each data point being a dictionary with 'source' and 'target' keys.
+    tuple: A tuple containing two lists - valid data and invalid data.
     """
     valid_data: List[dict] = []
     invalid_data: List[dict] = []
     current_sentence: List[str] = []
+    filename = os.path.basename(file_path)
 
     with open(file_path, encoding="utf-8") as file:
         for line in file:
@@ -33,6 +33,7 @@ def process_file(file_path: str):
                         data_point = {
                             "source": source,
                             "target": target,
+                            "filename": filename,
                         }
                         if is_valid_data_point(data_point):
                             valid_data.append(data_point)
@@ -48,6 +49,7 @@ def process_file(file_path: str):
                         data_point = {
                             "source": source,
                             "target": target,
+                            "filename": filename,
                         }
                         if is_valid_data_point(data_point):
                             valid_data.append(data_point)
@@ -61,10 +63,7 @@ def process_file(file_path: str):
     if current_sentence:
         source = "".join(current_sentence)
         target = " ".join(current_sentence)
-        data_point = {
-            "source": source,
-            "target": target,
-        }
+        data_point = {"source": source, "target": target, "filename": filename}
         if is_valid_data_point(data_point):
             valid_data.append(data_point)
         else:
@@ -73,39 +72,43 @@ def process_file(file_path: str):
     return valid_data, invalid_data
 
 
-def process_folder(folder_path: str):
+def process_folder(folder_path: str, valid_output_file: str, invalid_output_file: str):
     """
-    Processes all text files in the given folder and saves the results to separate JSON files.
-    Each JSON file name is the same as the original file name.
+    Processes all text files in the given folder and aggregates the results into two JSON files:
+    one for valid data and one for invalid data.
 
     Parameters:
     folder_path (str): The path to the folder containing text files.
+    valid_output_file (str): The file path where valid data will be saved.
+    invalid_output_file (str): The file path where invalid data will be saved.
     """
-    valid_output_folder = "data/output/segpos_tib_word/valid_data_json"
-    invalid_data_folder = "data/output/segpos_tib_word/invalid_data_json"
-    os.makedirs(valid_output_folder, exist_ok=True)
-    os.makedirs(invalid_data_folder, exist_ok=True)
+    all_valid_data = []
+    all_invalid_data = []
 
     for root, dirs, files in os.walk(folder_path):
-        if root.endswith("/seg"):
-            prefix = os.path.basename(os.path.dirname(root))
-            for filename in files:
+        for dir in dirs:
+            for filename in os.listdir(os.path.join(root, dir)):
                 if filename.endswith(".txt"):
-                    file_path = os.path.join(root, filename)
+                    file_path = os.path.join(root, dir, filename)
                     valid_data, invalid_data = process_file(file_path)
-                    output_file = os.path.join(
-                        valid_output_folder,
-                        f"{prefix}_{filename.replace('.txt', '.json')}",
-                    )
-                    save_json(valid_data, output_file)
-                    if invalid_data:
-                        invalid_output_file = os.path.join(
-                            invalid_data_folder,
-                            f"{prefix}_{filename.replace('.txt', '.json')}",
-                        )
-                        save_json(invalid_data, invalid_output_file)
+                    all_valid_data.extend(valid_data)
+                    all_invalid_data.extend(invalid_data)
+
+    # Save all valid data into one JSON file
+    save_json(all_valid_data, valid_output_file)
+
+    # Save all invalid data into another JSON file
+    if all_invalid_data:
+        save_json(all_invalid_data, invalid_output_file)
 
 
-# Example usage:
-folder_path = "data/input/SegPos"
-process_folder(folder_path)
+if __name__ == "__main__":
+    folder_path = "data/input/SegPos"
+    valid_output_file = "data/output/segpos_tib_word/segpos_tib_word_valid_data.json"
+    invalid_output_file = (
+        "data/output/segpos_tib_word/segpos_tib_word_invalid_data.json"
+    )
+    # Ensure the parent directories exist
+    os.makedirs(os.path.dirname(valid_output_file), exist_ok=True)
+    os.makedirs(os.path.dirname(invalid_output_file), exist_ok=True)
+    process_folder(folder_path, valid_output_file, invalid_output_file)

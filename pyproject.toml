@@ -18,6 +18,8 @@ classifiers = [
 ]
 dependencies = [
   "conllu>=5.0.2",
+  "pandas>=2.2.3",
+  "datasets>=3.0.0"
 ]
 
 [project.optional-dependencies]
