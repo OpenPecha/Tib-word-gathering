@@ -32,3 +32,13 @@ def is_valid_data_point(data_point):
 def save_json(data, file_path):
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def read_json_file(file_path):
+    with open(file_path) as file:
+        return json.load(file)
+
+
+def write_json_file(file_path, data):
+    with open(file_path, "w") as file:
+        json.dump(data, file, indent=4, ensure_ascii=False)
