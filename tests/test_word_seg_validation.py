@@ -5,9 +5,7 @@ from TibWordGathering.word_seg_validation import validate_word_segmentation
 
 
 def test_word_seg_validation():
-    unique_word_list_file = (
-        "data/input/unique_word_list/combined_unique_tibetan_word_list.json"
-    )
+    unique_word_list_file = "tests/data/output/test_validated_word_seg_data/test_validated_word_seg_data.json"
     word_segmentation_data_file = "tests/data/input/word_seg_data.json"
     validated_word_segmentation_file = "tests/data/output/test_validated_word_seg_data/test_validated_word_seg_data.json"  # noqa
     invalidated_word_segmentation_file = "tests/data/output/test_invalidated_word_seg_data/test_invalidated_word_seg_data.json"  # noqa
