@@ -31,10 +31,10 @@ def push_df_to_hub(train_df):
     )
 
     # Push the dataset to Hugging Face Hub
-    dataset_dict.push_to_hub("Jimpa2000/without_deduplication_combined_word_seg_data")
+    dataset_dict.push_to_hub("Jimpa2000/standard_tibetan_word_segment")
 
 
 # Usage example
-json_file = "data/output/combined_word_seg_data copy/combined_word_seg_data.json"
+json_file = "combined_intersection.json"
 df = get_data_df(json_file)
 push_df_to_hub(df)

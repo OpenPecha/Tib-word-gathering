@@ -1,4 +1,6 @@
 import json
+import os
+from typing import Dict, List
 
 
 # Function to calculate Manhattan distance between two strings
@@ -42,3 +44,18 @@ def read_json_file(file_path):
 def write_json_file(file_path, data):
     with open(file_path, "w") as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
+
+
+def append_to_json_file(data: List[Dict], output_path: str):
+    """
+    Append data to an existing JSON file or create a new one if it doesn't exist.
+    """
+    if os.path.exists(output_path):
+        with open(output_path, "r+", encoding="utf-8") as file:
+            existing_data = json.load(file)
+            existing_data.extend(data)
+            file.seek(0)  # Move cursor to start to overwrite file
+            json.dump(existing_data, file, ensure_ascii=False, indent=4)
+    else:
+        with open(output_path, "w", encoding="utf-8") as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
